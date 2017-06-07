@@ -133,6 +133,14 @@ function Weapon(name, damage) {
  * @name checkPack
  */
 
+ Player.prototype.checkPack = function (){
+console.log("Your items are..")
+   for (var i = 0; i < this.getPack().length; i++) {
+
+   console.log(this.getPack()[i]);
+  }
+};
+
 
 
 /**
@@ -166,9 +174,6 @@ Player.prototype.takeItem = function (item){
  };
 
 
-
-
-
 /**
  * Player Class Method => discardItem(item)
  * -----------------------------
@@ -194,6 +199,21 @@ Player.prototype.takeItem = function (item){
  * @param {Item/Weapon/Food} item   The item to discard.
  * @return {boolean} true/false     Whether player was able to remove item from pack.
  */
+
+ Player.prototype.discardItem = function (item){
+  var indexedItem = this.getPack().indexOf(item);
+
+  if(indexedItem === -1){
+    console.log(this.name + " does not have a " + item.name + " nothing was discarded.");
+    return false;
+  }else{
+    console.log("The " + item.name + " was discarded.");
+    this.getPack().splice(indexedItem,1);
+    return true;
+ }
+};
+
+
 
 
 /**
