@@ -310,6 +310,14 @@ discardItem(item){
  * @param {Item/Weapon/Food} item   The item to use.
  */
 
+ useItem(item){
+    if (item instanceof Weapon){
+    this.equip(item);
+  }else if (item instanceof Food){
+    this.eat(item);
+  }
+ }
+
 
 /**
  * Player Class Method => equippedWith()
