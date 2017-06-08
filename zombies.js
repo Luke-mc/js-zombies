@@ -9,7 +9,7 @@
  */
 
 
- class Item {
+class Item {
   constructor(name){
      this.name = name;
   }
@@ -34,7 +34,7 @@
  */
 
 
- class Weapon extends Item {
+class Weapon extends Item {
   constructor(name,damage){
     super(name);
     this.damage= damage;
@@ -66,7 +66,7 @@
  * @property {number} energy
  */
 
-  class Food extends Item {
+class Food extends Item {
   constructor(name,energy){
     super(name);
     this.energy= energy;
@@ -103,7 +103,7 @@
  * @property {method} getMaxHealth         Returns private variable `maxHealth`.
  */
 
-   class Player extends Item {
+class Player extends Item {
   constructor(name,health,strength,speed){
     super(name);
     this._pack = [];
@@ -340,7 +340,7 @@ discardItem(item){
     console.log(this.name + " is equipped with a " + this.equipped.name);
     return this.equipped.name;
   }
-}
+ }
 }  // End super class
 
 
@@ -360,7 +360,7 @@ discardItem(item){
  * @property {boolean} isAlive      Default value should be `true`.
  */
 
- class Zombie {
+class Zombie {
   constructor(health,strength,speed){
      this._maxhealth = health;
      this.health = health;
@@ -415,7 +415,7 @@ class FastZombie extends Zombie {
  * @param {number} speed            The zombie's speed.
  */
 
- class StrongZombie extends Zombie {
+class StrongZombie extends Zombie {
   constructor(health,strength,speed){
     super(health,strength,speed);
   }
@@ -444,7 +444,7 @@ class FastZombie extends Zombie {
  * @param {number} speed            The zombie's speed.
  */
 
- class RangedZombie extends Zombie {
+class RangedZombie extends Zombie {
   constructor(health,strength,speed){
     super(health,strength,speed);
   }
@@ -478,7 +478,8 @@ class FastZombie extends Zombie {
  * ExplodingZombie Extends Zombie Class
  * -----------------------------
  */
- class ExplodingZombie extends Zombie {
+
+class ExplodingZombie extends Zombie {
   constructor(health,strength,speed){
     super(health,strength,speed);
   }
