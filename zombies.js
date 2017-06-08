@@ -280,6 +280,22 @@ discardItem(item){
  * @param {Food} itemToEat  The food item to eat.
  */
 
+ eat(food){
+  var pack = this.getPack();
+  var maxH = this.getMaxHealth();
+  var indexedFood = pack.indexOf(food);
+  if (indexedFood === -1 || !(food instanceof Food)){
+    return false;
+  }else {
+    this.discardItem(food);
+    if ((this.health + food.energy) < maxH){
+      this.health += food.energy;
+    }else{
+        this.health = maxH;
+    }
+  }
+ }
+
 
 /**
  * Player Class Method => useItem(item)
