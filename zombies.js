@@ -478,6 +478,11 @@ class FastZombie extends Zombie {
  * ExplodingZombie Extends Zombie Class
  * -----------------------------
  */
+ class ExplodingZombie extends Zombie {
+  constructor(health,strength,speed){
+    super(health,strength,speed);
+  }
+}
 
 
 
