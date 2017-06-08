@@ -332,6 +332,15 @@ discardItem(item){
  * @name equippedWith
  * @return {string/boolean}   Weapon name or false if nothing is equipped.
  */
+ equippedWith(){
+    if (!this.equipped){
+    console.log(this.name + " has nothing equipped.");
+    return false;
+  }else {
+    console.log(this.name + " is equipped with a " + this.equipped.name);
+    return this.equipped.name;
+  }
+}
 
 }
 
