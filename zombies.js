@@ -387,6 +387,11 @@ discardItem(item){
  * @param {number} speed            The zombie's speed.
  */
 
+class FastZombie extends Zombie {
+  constructor(health,strength,speed){
+    super(health,strength,speed);
+  }
+}
 
 /**
  * FastZombie Extends Zombie Class
