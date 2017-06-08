@@ -123,7 +123,7 @@
     return this._maxHealth;
   }
 
-}
+
 
 
 
@@ -139,6 +139,13 @@
  *
  * @name checkPack
  */
+
+ checkPack(){
+    console.log("Your items are..");
+   for (var i = 0; i < this.getPack().length; i++) {
+    console.log(this.getPack()[i]);
+   }
+ }
 
 
 /**
@@ -158,6 +165,22 @@
  * @param {Item/Weapon/Food} item   The item to take.
  * @return {boolean} true/false     Whether player was able to store item in pack.
  */
+
+ takeItem(item){
+  var pack = this.getPack();
+  var packSize = pack.length;
+
+  if (packSize >= 3 ){
+    console.log(this.name + "'s pack is full! This " + item.name + " cannot be carried.");
+    return false;
+  }
+  else if (packSize < 3){
+    console.log( this.name + " picked up a " + item.name );
+    pack.push(item);
+    return true;
+  }
+ }
+
 
 
 
@@ -187,6 +210,17 @@
  * @return {boolean} true/false     Whether player was able to remove item from pack.
  */
 
+discardItem(item){
+ var indexedItem = this.getPack().indexOf(item);
+  if (indexedItem === -1){
+    console.log(this.name + " does not have a " + item.name + " nothing was discarded.");
+    return false;
+  }else {
+    console.log("The " + item.name + " was discarded.");
+    this.getPack().splice(indexedItem,1);
+    return true;
+  }
+ }
 
 /**
  * Player Class Method => equip(itemToEquip)
@@ -256,6 +290,8 @@
  * @name equippedWith
  * @return {string/boolean}   Weapon name or false if nothing is equipped.
  */
+
+}
 
 
 /**
